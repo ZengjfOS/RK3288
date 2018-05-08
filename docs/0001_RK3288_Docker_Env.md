@@ -29,7 +29,8 @@ zengjf@zengjf:~/zengjf/gpg$
 ## 安装依赖包
 
 * `sudo apt-get update`
-* `sudo apt-get install git-core gnupg flex bison gperf libsdl-dev libesd0-dev build-essential zip curl libncurses5-dev zlib1g-dev libxml2-utils genromfs lsb-core libc6-dev-i386 g++-multilib lib32z1-dev lib32ncurses5-dev u-boot-tools android-tools-fastboot Texinfo python software-properties-common bc lzop`
+* `sudo apt-get install git-core gnupg flex bison gperf libsdl-dev libesd0-dev build-essential make zip curl libncurses5-dev zlib1g-dev libxml2-utils genromfs lsb-core libc6-dev-i386 g++-multilib lib32z1-dev lib32ncurses5-dev u-boot-tools android-tools-fastboot Texinfo python software-properties-common bc lzop`
+* `sudo apt-get install build-essential make libc6-dev texinfo libncurses-dev git-core gnupg flex bison zip curl ncurses-dev libsdl-dev zlib1g-dev lib32ncurses5 libxml2-utils lzma gperf python software-properties-common bc lzop`
 * `sudo apt-get install openjdk-7-jdk`
 * `java -version`
 * `gcc -version`
@@ -39,36 +40,35 @@ zengjf@zengjf:~/zengjf/gpg$
 * `sudo mv /usr/bin/g++ /usr/bin/g++.bk`
 * `sudo ln -s /usr/bin/g++-4.4 /usr/bin/g++`
 * `gcc --version`
-* `sudo apt-get install build-essential make libc6-dev texinfo libncurses-dev git-core gnupg flex bison zip curl ncurses-dev libsdl-dev zlib1g-dev lib32ncurses5 libxml2-utils lzma gperf python software-properties-common bc lzop`
 
 ## Docker save and remove
-* `sudo docker run -v `pwd`:/root/android -it ubuntu:14.04 /bin/bash`: 在这种情况下安装好需要的依赖软件；
+* ``sudo docker run -v `pwd`:/root/android -it ubuntu:14.04 /bin/bash``: 在这种情况下安装好需要的依赖软件；
 * 另外开一个终端，保存当前的docker环境：
   * `sudo docker ps`
     ```
-    aplex@aplex:~$ sudo docker ps
+    zengjf@zengjf:~$ sudo docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     451458d9596c        ubuntu:14.04        "/bin/bash"         About an hour ago   Up About an hour                        eloquent_turing
-    aplex@aplex:~$
+    zengjf@zengjf:~$
     ```
   * `sudo docker commit -m "android-build" 451458d9596c android-build:v1.0`
   * `sudo docker images`
     ```
-    aplex@aplex:~$ sudo docker images
+    zengjf@zengjf:~$ sudo docker images
     REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
     android-build             v1.0                016729213337        3 minutes ago       779MB
     ubuntu                    14.04               8cef1fa16c77        9 days ago          223MB
     opensourcebikeshare_web   latest              02d06b104888        6 weeks ago         344MB
     mysql                     latest              5195076672a7        7 weeks ago         371MB
     ubuntu                    latest              f975c5035748        2 months ago        112MB
-    aplex@aplex:~$
+    zengjf@zengjf:~$
     ```
   * `sudo docker rmi 8e61b759ab52` 
     ```
-    aplex@aplex:~$ sudo docker rmi 8e61b759ab52
+    zengjf@zengjf:~$ sudo docker rmi 8e61b759ab52
     Untagged: local:v1.0
     Deleted: sha256:8e61b759ab52066cbfc40ec4871dc357c3903fc5893ec39826823e3f7994b4d7
-    aplex@aplex:~$
+    zengjf@zengjf:~$
     ```
 
 ## 合成源代码包
