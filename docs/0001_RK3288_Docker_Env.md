@@ -6,6 +6,7 @@
 * [【Docker】保存镜像、 容器到本地， 从本地加载镜像、 容器](https://blog.csdn.net/renhanchi/article/details/75898857)
 * [Use bind mounts](https://docs.docker.com/storage/bind-mounts/)
 * [docker commit](https://docs.docker.com/engine/reference/commandline/commit/)
+* [webupd8 oracle-java-7-installer failing with 404](https://askubuntu.com/questions/920106/webupd8-oracle-java-7-installer-failing-with-404)
 
 ## Docker Pull Ubuntu 14.04
 
@@ -30,9 +31,7 @@ zengjf@zengjf:~/zengjf/gpg$
 
 * `sudo apt-get update`
 * `sudo apt-get install git-core gnupg flex bison gperf libsdl-dev libesd0-dev build-essential make zip curl libncurses5-dev zlib1g-dev libxml2-utils genromfs lsb-core libc6-dev-i386 g++-multilib lib32z1-dev lib32ncurses5-dev u-boot-tools android-tools-fastboot Texinfo python software-properties-common bc lzop`
-* `sudo apt-get install build-essential make libc6-dev texinfo libncurses-dev git-core gnupg flex bison zip curl ncurses-dev libsdl-dev zlib1g-dev lib32ncurses5 libxml2-utils lzma gperf python software-properties-common bc lzop`
-* `sudo apt-get install openjdk-7-jdk`
-* `java -version`
+* 下载oracle jdk 7，手动安装，其实设置一下`PATH`就行了：http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
 * `gcc -version`
 * `sudo apt-get install gcc-4.4 g++-4.4 g++-4.4-multilib`
 * `sudo mv /usr/bin/gcc /usr/bin/gcc.bk`
